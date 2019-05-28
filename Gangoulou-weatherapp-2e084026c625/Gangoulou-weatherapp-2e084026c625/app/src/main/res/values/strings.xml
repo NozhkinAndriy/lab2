@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WeatherTestProject</string>
+    <string name="bookmarked_city">Bookmarked City</string>
+    <string name="search_hint">location</string>
+    <string name="action_find_on_map">Find on map</string>
+
+    <!-- WeatherInfo !-->
+    <string name="selected_city_name">City</string>
+    <string name="weather_label">Clear</string>
+    <string name="current_date">Date</string>
+    <string name="temperature">Temp</string>
+    <string name="today_temp_max">Max</string>
+    <string name="today_temp_min">Min</string>
+    <string name="rain_chances">Rain Chances</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind_info">Wind Info</string>
+
+
+    <string name="return_to_main_button">Return</string>
+    <string name="get_weather_from_map_marker">Select location</string>
+    <string name="add_bookmark_button">Add to bookmarks</string>
+</resources>

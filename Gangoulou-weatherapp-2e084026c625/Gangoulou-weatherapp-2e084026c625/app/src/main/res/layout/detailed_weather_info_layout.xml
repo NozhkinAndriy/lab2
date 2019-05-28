@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/forecast_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/current_weather_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/elements_base_margin_double">
+
+            <ImageView
+                android:id="@+id/current_weather_icon"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_sunny" />
+
+            <LinearLayout
+                android:id="@+id/curr_weather_label_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical"
+                tools:ignore="RelativeOverlap">
+
+                <TextView
+                    android:id="@+id/selected_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_city_name"
+                    android:textColor="@color/colorNormal"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/selected_city_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperature"
+                    android:textColor="@color/colorNormal"
+                    android:textSize="64sp" />
+
+                <TextView
+                    android:id="@+id/selected_city_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/elements_base_margin"
+                    android:text="@string/weather_label"
+                    android:textColor="@color/colorNormal"
+                    android:textSize="24sp" />
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/elements_base_margin"
+                        android:layout_marginRight="@dimen/elements_base_margin"
+                        android:src="@drawable/ic_humidity" />
+
+                    <TextView
+                        android:id="@+id/selected_city_humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/humidity"
+                        android:textColor="@color/colorNormal"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/elements_base_margin_double"
+                        android:layout_marginLeft="@dimen/elements_base_margin_double"
+                        android:layout_marginEnd="@dimen/elements_base_margin"
+                        android:layout_marginRight="@dimen/elements_base_margin"
+                        android:src="@drawable/ic_wind" />
+
+                    <TextView
+                        android:id="@+id/selected_city_wind_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/wind_info"
+                        android:textColor="@color/colorNormal"
+                        android:textSize="14sp" />
+                </android.support.v7.widget.LinearLayoutCompat>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/forecast_return_main_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:drawableStart="@drawable/ic_return"
+                android:drawableLeft="@drawable/ic_return"
+                android:drawablePadding="@dimen/elements_base_margin"
+                android:text="@string/return_to_main_button"
+                android:textColor="@color/colorNormal" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/add_to_bookmarks_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:drawableStart="@drawable/ic_bookmark"
+                android:drawableLeft="@drawable/ic_bookmark"
+                android:drawablePadding="@dimen/elements_base_margin"
+                android:text="@string/add_bookmark_button"
+                android:textColor="@color/colorNormal" />
+        </GridLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/forecast_items_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:listitem="@layout/forecast_item_layout" />
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>
